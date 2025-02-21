@@ -2,43 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me"
-const identity = {
-    firstName: "Jason",
-    country: "USA",
-    occupation: "Coder",
-    hobbies: ["photography", "cooking", "Car Rescue"]
-}
-const skills = ["HTML", "Ford", "Ranger", "Mustang"]
-const happy = true;
-const finished = true;
-const goal =3;
 
-const skillColor = "navy"
-const fontWeight = "semi-bold"
-const textCase = "uppercase"
 ---
 
-<BaseLayout>
-    <h1>About Me</h1>
-    <h2>... and my new Astro site!</h2>
+<BaseLayout pageTitle={pageTitle}>
+    <div class="p-6 md:p-0 gap-4 space-y-4">
+        <p>Welcome to my world of car and truck revitalization! My name is Jason, and I have a deep-rooted passion for bringing old cars back to life—especially Fords. Growing up in a family that worked for Ford Motor Company, I was surrounded by the legacy of craftsmanship, innovation, and the timeless beauty of classic automobiles.</p>
 
-    <p>I am working through the Astro tutorial.</p>
-    <p>Here are a few facts about me:</p>
-    <ul>
-        <li>My name is {identity.firstName}</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {identity.hobbies.length >= 2 &&
-          <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+        <p>Now, I’m taking that heritage and turning it into a hands-on journey of restoring and revitalizing a mix of vehicles. Whether it’s breathing new life into a neglected Mustang, reviving a classic F-Series, or preserving the history of my favorite small truck, the Ranger, I’m dedicated to ensuring these cars get the care and attention they deserve.</p>
+            
+        <p>I may be just starting out, but my dedication to quality work and my love for automobiles drive me forward. Follow along as I take on new projects, share restoration tips, and bring these classic rides back to the road!</p>
+            
+        <p>Let’s get these rescues rolling—one rebuild at a time. 🚗🔧</p>
+    </div>
 
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial</p>}
-
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 2 days.</p>}
 </BaseLayout>

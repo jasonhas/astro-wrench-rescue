@@ -1,4 +1,15 @@
 ---
-const {url,title} = Astro.props;
+const {url,title,date,description} = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+<li>
+    <article class="py-4">
+        <h2 class="font-bold text-2xl text-blue-600 hover:text-blue-300">
+            <a href={url}>{title}</a>
+        </h2>
+        <small>{date.toDateString()}</small>
+        <div class="py-2">
+            <p>{description}</p>
+        </div>
+    </article>
+    
+</li>

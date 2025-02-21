@@ -1,10 +1,15 @@
 ---
-import Greeting from "../components/Greeting"
-import BaseLayout from "../layouts/BaseLayout.astro"
+import MainLandingLayout from "../layouts/MainLandingLayout.astro"
+import MainHero from "../components/MainHero.astro"
+import LatestBlogs from "../components/LatestBlogs.astro"
+import TheProjects from "../components/TheProjects.astro"
+import NewsletterSignup from "../components/NewsletterSignup.astro"
 
 const pageTitle= "Home Page"
 ---
-<BaseLayout pageTitle={pageTitle}>
-	<h2>My awesome blog subtitle</h2>
-	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey There"]} />
-</BaseLayout>
+<MainLandingLayout pageTitle={pageTitle}>
+	<MainHero/>
+		<LatestBlogs/>
+		<TheProjects/>
+		<NewsletterSignup/>
+</MainLandingLayout>

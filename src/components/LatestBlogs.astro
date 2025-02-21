@@ -1,0 +1,30 @@
+---
+import PostImage from '../images/Main-Header.png'
+import { Image } from 'astro:assets';
+---
+
+<div class="bg-base-100 p-4">
+    <h1 class="font-bold text-4xl text-center py-4">Latest Blog Posts</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <div class="py-2 col">
+            <Image src={PostImage} alt="Blog Heading" class="rounded-lg shadow-2xl"/>
+            <h3 class="font-semibold text-2xl text-center py-2"><a href="#">Snazy Title</a></h3>
+            <p class="pb-2 text-center">Posted: <strong>02/18/2025</strong></p>
+            <p class="px-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae culpa, maiores atque, neque aliquid pariatur explicabo ipsam dolor rem ipsum vel, hic officia ullam! Corporis dicta debitis ratione sunt nam.</p>
+        </div>
+        
+        <div class="py-2 col">
+            <Image src={PostImage} alt="Blog Heading" class="rounded-lg shadow-2xl"/>
+            <h3 class="font-semibold text-2xl text-center py-2"><a href="#">Snazy Title</a></h3>
+            <p class="pb-2 text-center">Posted: <strong>02/18/2025</strong></p>
+            <p class="px-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae culpa, maiores atque, neque aliquid pariatur explicabo ipsam dolor rem ipsum vel, hic officia ullam! Corporis dicta debitis ratione sunt nam.</p>
+        </div>
+    
+        <div class="py-2 col">
+            <Image src={PostImage} alt="Blog Heading" class="rounded-lg shadow-2xl"/>
+            <h3 class="font-semibold text-2xl text-center py-2"><a href="#">Snazy Title</a></h3>
+            <p class="pb-2 text-center">Posted: <strong>02/18/2025</strong></p>
+            <p class="px-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae culpa, maiores atque, neque aliquid pariatur explicabo ipsam dolor rem ipsum vel, hic officia ullam! Corporis dicta debitis ratione sunt nam.</p>
+        </div>
+    </div>
+</div>

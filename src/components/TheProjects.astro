@@ -1,0 +1,15 @@
+---
+import PostImage from '../images/Main-Header.png'
+import { Image } from 'astro:assets';
+---
+
+<div class="bg-base-200 p-4 ">
+    <h1 class="font-bold text-4xl text-center pt-2">The Projects</h1>
+    <div class="py-4 grid grid-cols-1 md:grid-cols-2">
+        <div class="col-auto">
+        <Image src={PostImage} alt="Blog Heading" class="rounded-lg shadow-2xl"/>
+        <h3 class="font-semibold text-2xl text-center py-2"><a href="#">Piggy!</a></h3>
+        <p class="text-center">1995 Ford Ranger Supercab XLT</p>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,14 @@
 ---
+import { getCollection } from "astro:content"
 import BaseLayout from "../layouts/BaseLayout.astro"
 import BlogPost from "../components/BlogPost.astro"
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true}))
-const pageTitle = "The Blog Page"
+const allPosts = await getCollection("blog")
+const sortedPosts = allPosts.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate))
+const pageTitle = "Blog Archive"
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<p>Thi is where the posts live.</p>
-	<ul>
-		{allPosts.map((post:any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
-	</ul>
+	<p class="text-center">A complete list of posts in date order</p>
+	<ol>
+		{sortedPosts.map((post:any) => <BlogPost url={`/posts/${post.id}/`} title={post.data.title} date={post.data.pubDate} description={post.data.description}/> )}
+	</ol>
 </BaseLayout>
