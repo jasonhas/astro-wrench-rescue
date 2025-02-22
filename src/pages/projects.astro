@@ -1,8 +1,28 @@
 ---
+import { getCollection } from "astro:content"
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PiggyImage from '../images/piggy/first_side_view.webp'
+import Image from "astro/components/Image.astro";
+const allProjects = await getCollection("projects")
 const pageTitle = "The Projects"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
+    <!-- <div class="bg-base-100 p-4 ">
+        <div class="py-4 grid grid-cols-1 md:grid-cols-2">
+            <div class="col-auto">
+            <Image src={PiggyImage} alt="1995 Ford Ranger Supercab XLT" class="rounded-lg shadow-2xl"/>
+            <h3 class="font-semibold text-2xl text-center py-2"><a href="#">Piggy!</a></h3>
+            <p class="text-center">1995 Ford Ranger Supercab XLT</p>
+            </div>
+        </div>
+    </div> -->
+    <div>
+        {allProjects.map((post:any) => (
+            <div>
+                <h2><a href={`/projects/${post.id}`}>{post.data.title}</a></h2>
+            </div>
+        ))}
+    </div>
 </BaseLayout>
